@@ -433,7 +433,8 @@
 <body>
 
     <header>
-        <a href="gallery.html" class="header-link" target="_blank">GALLERY</a>
+        <h1 class="en">THE QUIET PHONE</h1>
+        <h1 class="sw" style="display:none;">RUNUNU TULIVU</h1>
         <div class="header-right">
             <button id="lang-toggle" class="lang-switch">EN / SW</button>
             <div id="wallet-status">WALLET: NOT CONNECTED</div>
@@ -446,9 +447,10 @@
 
         <div class="panel">
             <div class="description" id="main-description">
-                <strong>THE QUIET PHONE</strong>
+                <strong class="en">THE QUIET PHONE</strong>
+                <strong class="sw" style="display:none;">RUNUNU TULIVU</strong>
                 <span class="en">A smartphone that refuses to notify you<br>
-                <strong>when you are with real humans</strong>.<br><br>
+                <strong>when you are with real humans.</strong><br>
                 It simply goes dark and silent<br>
                 the moment it detects three or more heartbeats<br>
                 in proximity.<br><br>
@@ -456,15 +458,16 @@
                 It just knows:<br>
                 <strong>"Spirit is happening here.<br>
                 I will wait outside."</strong></span>
-                <span class="sw" style="display:none;">Simu ya smartphone inayokataa kukujulisha<br>
-                <strong>unapokuwa na watu halisi</strong>.<br><br>
-                Inachukua tu mwendo wa giza na kimya<br>
-                sekunde moja inapotambua mishipa mitano au zaidi<br>
-                karibu nawe.<br><br>
-                Hakuna mpangilio.<br><br>
-                Inajua tu:<br>
-                <strong>"Roho hapa inacheza.<br>
-                Nitasubiri nje."</strong></span>
+                <span class="sw" style="display:none;">
+Simu mahiri inayokataa kukuarifu<br>
+unapokuwa na wanadamu wa kweli<br><br>
+Inazimika tu na kunyamaza kimya<br>
+mapigo matatu au zaidi ya moyo yanapogundulika<br>
+karibu nawe.<br><br>
+Hakuna mipangilio.<br>
+Inajua tu:<br><br>
+"Roho inafanya kazi hapa.<br>
+Nitasubiri nje."</span>
             </div>
             
             <div class="variant-bar">
@@ -695,7 +698,7 @@ function randomizeColors() {
   const palette = palettes[currentCountry] || ["#FFFFFF"];
   traits.forEach(t => {
     colors[t.id] = currentCountry === 'cu' 
-      ? "#FFFFFF" 
+      ? "#D9D9D9" 
       : palette[Math.floor(Math.random() * palette.length)];
   });
 }
@@ -1089,8 +1092,6 @@ function init() {
       langToggle.textContent = currentLang === 'en' ? 'EN / SW' : 'SW / EN';
       try { localStorage.setItem('quietPhoneLang', currentLang); } catch(e) {}
     };
-    const savedLang = localStorage.getItem('quietPhoneLang');
-    if (savedLang === 'sw') langToggle.click();
   }
 }
 
